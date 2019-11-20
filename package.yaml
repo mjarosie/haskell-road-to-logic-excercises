@@ -1,0 +1,26 @@
+name:                haskell-road-to-logic-excercises
+version:             0.1.0.0
+github:              "mjarosie/haskell-road-to-logic-excercises"
+license:             BSD3
+author:              "Maciej Jarosiewicz"
+
+extra-source-files:
+- README.md
+
+dependencies:
+- base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+
+tests:
+  haskell-road-to-logic-excercises-test:
+    main:                Chapter1Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - haskell-road-to-logic-excercises
+    - hspec
