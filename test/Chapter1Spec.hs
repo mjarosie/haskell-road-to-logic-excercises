@@ -23,3 +23,6 @@ main = hspec $ do
     describe "lowest discriminator alternative" $ do
         it "returns the same result for edge case as the equality doesn't make difference" $
             ldf 2 4 `shouldBe` ldf' 2 4
+    describe "prime numbers" $ do
+        it "returns False for 1" $
+            prime0 1 `shouldBe` False
