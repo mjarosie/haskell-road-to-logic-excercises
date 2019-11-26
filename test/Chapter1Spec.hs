@@ -26,3 +26,17 @@ main = hspec $ do
     describe "prime numbers" $ do
         it "returns False for 1" $
             prime0 1 `shouldBe` False
+    describe "finding minimum from the list of integers" $ do
+        it "throws an error for the empty list" $
+            evaluate (mnmInt []) `shouldThrow` anyException 
+        it "returns the singleton element if there's just one given" $
+            mnmInt [1] `shouldBe` 1 
+        it "returns the minimum element of a given list" $
+            mnmInt [2, 1, 3, 4] `shouldBe` 1
+    describe "finding maximum from the list of integers" $ do
+        it "throws an error for the empty list" $
+            evaluate (maxInt []) `shouldThrow` anyException 
+        it "returns the singleton element if there's just one given" $
+            maxInt [1] `shouldBe` 1 
+        it "returns the maximum element of a given list" $
+            maxInt [2, 1, 3, 4] `shouldBe` 4

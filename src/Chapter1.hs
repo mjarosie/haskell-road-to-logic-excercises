@@ -3,6 +3,8 @@ module Chapter1
     , ldf
     , ldf'
     , prime0
+    , mnmInt
+    , maxInt
     ) where
 
 divides :: Integer -> Integer -> Bool
@@ -27,3 +29,18 @@ prime0 n
     | n < 1     = error "not a positive integer"
     | n == 1    = False
     | otherwise = ld n == n
+
+mnmInt :: [Int] -> Int
+mnmInt [] = error "empty list"
+mnmInt [x] = x
+mnmInt (x:xs) = min x (mnmInt xs)
+
+min' :: Int -> Int -> Int
+min' x y 
+    | x < y     = x
+    | otherwise = y
+
+maxInt :: [Int] -> Int
+maxInt [] = error "empty list"
+maxInt [x] = x
+maxInt (x:xs) = max x (maxInt xs)
